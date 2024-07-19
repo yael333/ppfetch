@@ -133,8 +133,8 @@ log() {
 	# additional gap for text spacing.
 	esc_p CUF $(($ascii_width - 2))
 
-  # If Lisp mode is enabled, then add relevant brackets and spacing
-  # and if it's the first time running the function, add the define flair
+	# If Lisp mode is enabled, then add relevant brackets and spacing
+	# and if it's the first time running the function, add the define flair
 	if [ ${PF_LISP:-""} ]; then
 		if [ "$info_height" -ge "1" ]; then
 			printf "$PF_COL3"
@@ -166,8 +166,8 @@ log() {
 	esc_p SGR "3${PF_COL2-9}"
 	printf "%s" "$info"
 
-  # More Lisp mode decoration
-  # If we're on the last line, close initial bracket
+	# More Lisp mode decoration
+	# If we're on the last line, close initial bracket
 	if [ ${PF_LISP:-""} ]; then
 		if [ "$info_height" -ge "1" ]; then
 			printf '%s)' "$PF_COL3"
@@ -902,7 +902,7 @@ get_memory() {
 			esac
 		done <<-EOF
 			$(kstat -p unix:0:system_pages:pagestotal \
-					unix:0:system_pages:pagesfree)
+				unix:0:system_pages:pagesfree)
 		EOF
 
 		mem_full=$((pages_full * hw_pagesize / 1024 / 1024))
@@ -1132,56 +1132,56 @@ get_ascii() {
 	# This function also sets the text colors according
 	# to the ascii color.
 
-  # Returns the relevant palette of colos based on
-  # pride colors. Default: rainbow pride.
-  #
-  # First two colors are the title colors used for
-  # in text blocks.  
+	# Returns the relevant palette of colos based on
+	# pride colors. Default: rainbow pride.
+	#
+	# First two colors are the title colors used for
+	# in text blocks.
 	read_pride() {
 		case ${1:-${PF_PRIDE:-"rainbow"}} in
 		[Rr]ainbow*)
-      p="$c3 $c2 $c1 $c208 $c3 $c2 $c4 $c5"
-      true_p="$c226 $c28 $c160 $c208 $c226 $c28 $c27 $c90"
+			p="$c3 $c2 $c1 $c208 $c3 $c2 $c4 $c5"
+			true_p="$c226 $c28 $c160 $c208 $c226 $c28 $c27 $c90"
 			;;
-	  [Ll]esbian*)
-      p="$c5 $c1 $c1 $c209 $c7 $c5 $c13"
+		[Ll]esbian*)
+			p="$c5 $c1 $c1 $c209 $c7 $c5 $c13"
 			true_p="$c169 $c160 $c160 $c209 $c231 $c169 $c125"
 			;;
-	  [Bb]i*)
-      p="$c5 $c4 $c161 $c5 $c4"
+		[Bb]i*)
+			p="$c5 $c4 $c161 $c5 $c4"
 			true_p="$c132 $c19 $c161 $c132 $c19"
 			;;
-	  [Gg]ay*)
-      p="$c10 $c4 $c2 $c10 $c7 $c4 $c12"
-      true_p="$c115 $c110 $c43 $c115 $c231 $c110 $c56"
+		[Gg]ay*)
+			p="$c10 $c4 $c2 $c10 $c7 $c4 $c12"
+			true_p="$c115 $c110 $c43 $c115 $c231 $c110 $c56"
 			;;
 		[Tt]rans*)
-      # Trans true colors look great on majority of palettes
+			# Trans true colors look great on majority of palettes
 			p="$c12 $c13 $c12 $c13 $c7 $c13 $c12"
-      true_p="$c81 $c217 $c81 $c217 $c231 $c217 $c81"
-      ;;
-    [Aa][cs]e*)
-      p="$c7 $c0 $c16 $c8 $c7 $c5"
-      true_p="$c145 $c90 $c16 $c145 $c231 $c90"
+			true_p="$c81 $c217 $c81 $c217 $c231 $c217 $c81"
 			;;
-    [Nn]*[Bb]*)
-      p="$c11 $c13 $c11 $c7 $c13 $c16"
+		[Aa][cs]e*)
+			p="$c7 $c0 $c16 $c8 $c7 $c5"
+			true_p="$c145 $c90 $c16 $c145 $c231 $c90"
+			;;
+		[Nn]*[Bb]*)
+			p="$c11 $c13 $c11 $c7 $c13 $c16"
 			true_p="$c226 $c134 $c226 $c231 $c134 $c16"
-			;;    
+			;;
 		[Gg]erman*)
-      p="$c3 $c1 $c16 $c1 $c3"
-      true_p="$c220 $c160 $c16 $c160 $c220"
+			p="$c3 $c1 $c16 $c1 $c3"
+			true_p="$c220 $c160 $c16 $c160 $c220"
 			;;
 		esac
 	}
 
-read_ascii() {
-    # Set initial variables
-    # 'height': height of ascii art (passed to function)
-    # 'p':      relevant pride color palette
+	read_ascii() {
+		# Set initial variables
+		# 'height': height of ascii art (passed to function)
+		# 'p':      relevant pride color palette
 		height=$(($2))
 		read_pride
-    if [ ${PF_TRUECOL:-''} ]; then p=$true_p; fi
+		if [ ${PF_TRUECOL:-''} ]; then p=$true_p; fi
 		set -- $p
 
 		# 'PF_COL1': Set the info name color according to primary ascii color.
@@ -1189,7 +1189,7 @@ read_ascii() {
 		PF_COL1=$1
 		PF_COL3=$2
 		shift 2
-    
+
 		# POSIX sh has no 'var+=' so 'var=${var}append' is used. What's
 		# interesting is that 'var+=' _is_ supported inside '$(())'
 		# (arithmetic) though there's no support for 'var++/var--'.
@@ -1199,8 +1199,8 @@ read_ascii() {
 		# the string (though this has the caveat of breaking indentation).
 
 		# All of the relevant code that decides on how to color the ascii
-    # text is here. It uses equal steps plus an additional hack to
-    # even out uneven ascii blocks. 
+		# text is here. It uses equal steps plus an additional hack to
+		# even out uneven ascii blocks.
 
 		length=0
 		for item in "$@"; do length=$(($length + 1)); done
