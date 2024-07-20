@@ -1,4 +1,4 @@
-
+<p align="center"><img src="" width="350px"></p>
 <h1 align="center">ppfetch</h1>
 <p align="center">A colorful system information tool written in POSIX sh based on pfetch</p><br>
 
@@ -7,7 +7,7 @@ The goal of this project is to implement a simple system
 information tool in POSIX `sh` with colorful pride output
 for users who identify as part of the LGBTQ.
 
-It's a fork of pfetch with additional features shown below in the config.
+It's a fork of pfetch with additional features shown below in the config. The majority of the code is from pfetch.
 <br>
 <br>
 <br>
