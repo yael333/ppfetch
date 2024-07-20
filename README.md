@@ -9,12 +9,11 @@ for users who identify as part of the LGBTQ.
 
 It's a fork of pfetch with additional features shown below in the config. The majority of the code is from pfetch.
 
+<br>
+<br>
+<br>
+<br>
 <P align="center"><img src="https://github.com/yael333/ppfetch/blob/master/screenshots/trans.png" width="350px"></p>
-<br>
-<br>
-<br>
-<br>
-
 ## OS support
 
 - **Linux**
