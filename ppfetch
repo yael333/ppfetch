@@ -1161,15 +1161,15 @@ get_ascii() {
 			true_p="$c81 $c217 $c81 $c217 $c231 $c217 $c81"
 			;;
 		[Aa][cs]e*)
-			p="$c7 $c0 $c16 $c8 $c7 $c5"
+			p="$c7 $c0 $c0 $c8 $c7 $c5"
 			true_p="$c145 $c90 $c16 $c145 $c231 $c90"
 			;;
 		[Nn]*[Bb]*)
-			p="$c11 $c13 $c11 $c7 $c13 $c16"
+			p="$c11 $c13 $c11 $c7 $c13 $c0"
 			true_p="$c226 $c134 $c226 $c231 $c134 $c16"
 			;;
 		[Gg]erman*)
-			p="$c3 $c1 $c16 $c1 $c3"
+			p="$c3 $c1 $c0 $c1 $c3"
 			true_p="$c220 $c160 $c16 $c160 $c220"
 			;;
 		esac
