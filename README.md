@@ -38,7 +38,7 @@ It's a fork of pfetch with additional features shown below in the config. The ma
 
 # Which color palette to use.
 # Default: rainbow
-# Valid: rainbow, lesbian, trans, gay, ace, bisexual, nb, german
+# Valid: rainbow, lesbian, trans, gay, ace, bisexual, nb, femboy, german
 PF_PRIDE="rainbow"
 
 # Use only primary color of palette for ascii
